@@ -7,7 +7,7 @@ valid_passports = 0
 valid_fields = 0
 fields_found = set()
 
-with open("aoc_input_4.txt") as f:
+with open("inputs/aoc_input_4.txt") as f:
     for line in f:
         if line != "\n":
             # PART 1

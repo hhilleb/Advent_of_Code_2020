@@ -1,6 +1,6 @@
 import re
 
-with open('aoc_input_2.txt') as f:
+with open('inputs/aoc_input_2.txt') as f:
     lines = [re.split("-| |: ", line.rstrip()) for line in f]
 
 n = 0

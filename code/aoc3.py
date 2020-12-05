@@ -1,6 +1,6 @@
 trees = {}
 
-with open('aoc_input_3.txt') as f:
+with open('inputs/aoc_input_3.txt') as f:
     for row, line in enumerate(f):
         for col, char in enumerate(line):
             if char == '#':

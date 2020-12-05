@@ -1,4 +1,4 @@
-with open('aoc_input_1.txt') as f:
+with open('inputs/aoc_input_1.txt') as f:
     numbers = [int(line.rstrip()) for line in f]
 
 for x in numbers:
