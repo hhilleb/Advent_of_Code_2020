@@ -43,21 +43,23 @@ def is_sum(sums, num):
 
 
 # PART 2
-def calculate_encryption_weakness(invalid_number):
+def calculate_encryption_weakness(target):
     with open("inputs/aoc_input_9.txt") as f:
         numbers = [int(line.rstrip()) for line in f]
     
-    for i in range(len(numbers)):
-        sum = 0
-        j = 0
-        interval = []
-        while sum < invalid_number:
-            interval.append(numbers[i + j])
-            sum += numbers[i + j]
-            j += 1
-        if sum == invalid_number:
-            return min(interval) + max(interval)
-    return None
+    top = 0
+    bottom = 0
+    cur_sum = numbers[0]
+
+    while(cur_sum != target):
+        if cur_sum < target:
+            bottom += 1
+            cur_sum += numbers[bottom]
+        elif cur_sum > target:
+            cur_sum -= numbers[top]
+            top += 1
+    
+    return max(numbers[top:bottom+1]) + min(numbers[top:bottom+1])
 
 print("Part 1: " + str(find_invalid_number()))
 print("Part 2: " + str((calculate_encryption_weakness(find_invalid_number()))))
