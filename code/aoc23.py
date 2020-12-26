@@ -1,5 +1,3 @@
-from itertools import cycle
-
 def read_input():
     with open("inputs/aoc_input_23.txt") as f:
         return [int(number) for number in f.readline().rstrip()]
